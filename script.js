@@ -497,7 +497,7 @@ function showResults() {
         <div class="paypal-section">
             <h3>☕ Did this quiz save you from an expensive mistake?</h3>
             <p>This site is 100% free and ad-free. If it helped you, consider buying me a coffee to keep it running.</p>
-            <a href="[PAYPAL_LINK_PLACEHOLDER]" target="_blank" class="paypal-btn">
+            <a href="https://paypal.me/shadikelany" target="_blank" class="paypal-btn">
                 💵 Support This Site - $3-5
             </a>
             <p style="font-size: 0.9em; margin-top: 10px;">Every donation helps cover hosting • Thank you for supporting independent coffee resources! ❤️</p>
@@ -523,7 +523,7 @@ function restartQuiz() {
 
 // Privacy policy
 function showPrivacyPolicy() {
-    const policyText = `PRIVACY POLICY\n\nThis coffee equipment quiz:\n\n• Stores your responses temporarily in memory only\n• Does not collect personal information\n• Does not use cookies or local storage\n• Does not track users across websites\n• Uses Amazon affiliate links for equipment recommendations\n• PayPal is used for optional donations\n\nYour quiz responses are deleted when you close this page.\n\nFor questions, contact: hello@coffeemistakes.com`;
+    const policyText = `PRIVACY POLICY\n\nThis coffee equipment quiz:\n\n• Stores your responses temporarily in memory only\n• Does not collect personal information\n• Does not use cookies or local storage\n• Does not track users across websites\n• Uses Amazon affiliate links for equipment recommendations\n• PayPal is used for optional donations\n\nYour quiz responses are deleted when you close this page.\n\nFor questions, contact: elmasryshadi@gmail.com`;
     
     alert(policyText);
 }
