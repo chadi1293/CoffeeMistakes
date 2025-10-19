@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don't Waste $500 on the Wrong Coffee Gear - Free Quiz</title>
+    <meta name="description" content="Take this 2-minute quiz based on r/Coffee advice to avoid expensive coffee equipment mistakes. Get honest recommendations for your budget.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Amazon Associates Disclosure -->
+        <div class="disclosure">
+            As an Amazon Associate, I earn from qualifying purchases.
+        </div>
+
+        <div class="quiz-card">
+            <!-- Homepage / Start Screen -->
+            <div id="start-screen" class="start-screen">
+                <div class="hero">
+                    <h1>Don't Waste $500 on the Wrong Coffee Gear</h1>
+                    <p class="subheadline">Take this 2-minute quiz to find equipment that actually works for YOUR situation</p>
+                    
+                    <div class="benefits">
+                        <div class="benefit">
+                            <span class="benefit-icon">✅</span>
+                            <span>Based on real advice from r/Coffee community</span>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-icon">⚠️</span>
+                            <span>Avoid the mistakes 1000s of beginners make</span>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-icon">💰</span>
+                            <span>Get honest recommendations for your budget</span>
+                        </div>
+                    </div>
+                    
+                    <button class="cta-button" onclick="startQuiz()">Start Quiz - It's Free</button>
+                    <p class="cta-subtext">No email required • 8 questions • 2 minutes</p>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div id="progress-container" class="progress-container" style="display: none;">
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <p class="progress-text">Question <span id="current-question">1</span> of 8</p>
+            </div>
+
+            <!-- Quiz Questions -->
+            <div id="quiz-questions" style="display: none;">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+
+            <!-- Results -->
+            <div id="results" class="results" style="display: none;">
+                <!-- Results will be inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    CoffeeMistakes.com | Built by coffee lovers, for coffee lovers
+                </div>
+                <div class="footer-center">
+                    <a href="#" onclick="showPrivacyPolicy()" class="footer-link">Privacy Policy</a>
+                </div>
+                <div class="footer-right">
+                    As an Amazon Associate, I earn from qualifying purchases.
+                </div>
+                <div class="footer-support">
+                    <a href="#" onclick="showSupportInfo()" class="support-link">☕ Support This Site</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
