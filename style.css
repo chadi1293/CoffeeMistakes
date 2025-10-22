@@ -739,13 +739,17 @@ select.form-control {
 
 /* END PERPLEXITY DESIGN SYSTEM */
 :root {
-  /* Coffee Shop Color Palette */
+  /* Refined Professional Coffee Palette */
   --espresso: #2b1f1a;
   --copper: #b87333;
   --cream: #f5f1ed;
   --rich-brown: #6b4423;
   --dark-text: #1a1614;
+  --professional-gray: #4a5568;
+  --accent-blue: #2563eb;
   --white: #ffffff;
+  --warning-red: #dc3545;
+  --success-green: #28a745;
   
   /* Spacing */
   --space-xs: 8px;
@@ -817,12 +821,12 @@ body {
 
 .hero h1 {
   font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 2.5rem;
+  font-weight: 700;
+  font-size: 2.2rem;
   color: var(--espresso);
   margin-bottom: var(--space-sm);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
 }
 
 .subheadline {
@@ -849,19 +853,20 @@ body {
 }
 
 .benefit-icon {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   min-width: 24px;
+  color: var(--copper);
 }
 
 .cta-button {
-  background: linear-gradient(135deg, var(--espresso), var(--rich-brown));
+  background: var(--espresso);
   color: var(--white);
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1.25rem;
-  padding: var(--space-md) var(--space-xl);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: var(--space-md) var(--space-lg);
   border: none;
-  border-radius: 50px;
+  border-radius: 8px;
   cursor: pointer;
   transition: var(--transition);
   box-shadow: var(--shadow-soft);
@@ -932,12 +937,12 @@ body {
 
 .question {
   font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1.5rem;
+  font-weight: 600;
+  font-size: 1.4rem;
   color: var(--espresso);
-  text-align: center;
+  text-align: left;
   margin-bottom: var(--space-lg);
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
 .options {
@@ -948,13 +953,13 @@ body {
 
 .option {
   background: var(--white);
-  border: 2px solid rgba(184, 115, 51, 0.2);
-  border-radius: 12px;
+  border: 1px solid rgba(184, 115, 51, 0.3);
+  border-radius: 6px;
   padding: var(--space-md);
   cursor: pointer;
   transition: var(--transition);
-  text-align: center;
-  font-weight: 500;
+  text-align: left;
+  font-weight: 400;
   position: relative;
 }
 
@@ -965,10 +970,11 @@ body {
 }
 
 .option.selected {
-  background: linear-gradient(135deg, var(--copper), var(--rich-brown));
+  background: var(--espresso);
   color: var(--white);
-  border-color: var(--copper);
-  transform: scale(1.02);
+  border-color: var(--espresso);
+  transform: none;
+  box-shadow: var(--shadow-soft);
 }
 
 .navigation {
@@ -1022,10 +1028,10 @@ body {
 
 .profile-title {
   font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 2rem;
+  font-weight: 600;
+  font-size: 1.8rem;
   color: var(--espresso);
-  text-align: center;
+  text-align: left;
   margin-bottom: var(--space-md);
 }
 
@@ -1062,11 +1068,27 @@ body {
 
 .warning-box {
   background: rgba(220, 53, 69, 0.1);
-  border: 2px solid #dc3545;
+  border: 2px solid var(--warning-red);
   border-radius: 8px;
   padding: var(--space-md);
   margin: var(--space-md) 0;
   color: #721c24;
+  font-weight: 500;
+}
+
+.honest-disclosure {
+  background: var(--cream);
+  border-radius: 8px;
+  padding: var(--space-md);
+  margin: var(--space-lg) 0;
+  font-size: 0.9rem;
+  color: var(--rich-brown);
+  border: 1px solid rgba(184, 115, 51, 0.3);
+}
+
+.profile-emoji {
+  font-size: 1.5rem;
+  margin-right: var(--space-xs);
 }
 
 .budget-split {
@@ -1098,24 +1120,25 @@ body {
 }
 
 .amazon-btn {
-  background: linear-gradient(135deg, #ff9500, #ffb84d);
+  background: var(--professional-gray);
   color: var(--white);
-  padding: var(--space-md) var(--space-md);
-  border-radius: 8px;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 4px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
   text-align: center;
   transition: var(--transition);
   box-shadow: var(--shadow-soft);
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: var(--space-xs);
+  justify-content: space-between;
+  font-size: 0.9rem;
 }
 
 .amazon-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 149, 0, 0.3);
+  background: var(--espresso);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-card);
   color: var(--white);
 }
 
@@ -1201,6 +1224,13 @@ body {
   margin-top: var(--space-sm);
   padding-top: var(--space-sm);
   border-top: 1px solid rgba(184, 115, 51, 0.2);
+}
+
+.feedback-note {
+  font-size: 0.9rem;
+  color: var(--rich-brown);
+  margin-bottom: var(--space-sm);
+  font-weight: 500;
 }
 
 .support-link {
