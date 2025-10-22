@@ -1,7 +1,6 @@
 // CoffeeMistakes.com - Complete Quiz Logic v2.0
 // Last updated: October 22, 2025 - Reddit feedback integrated
 
-// Configuration
 const CONFIG = {
   affiliateTag: "shadiz0f-20",
   paypalLink: "https://paypal.me/shadikelany",
@@ -9,7 +8,6 @@ const CONFIG = {
   privacyPolicyUrl: "https://coffeemistakes.com/privacy-policy"
 };
 
-// Quiz Data
 const quizData = {
   questions: [
     {
@@ -25,7 +23,7 @@ const quizData = {
     {
       id: 2,
       text: "Do you want to make milk-based drinks?",
-      conditional: true, // Only show if Q1 = espresso OR unsure
+      conditional: true,
       options: [
         { value: "yes", label: "Yes! Lattes, cappuccinos, all the frothy goodness" },
         { value: "sometimes", label: "Sometimes, but not a priority" },
@@ -95,12 +93,10 @@ const quizData = {
   ]
 };
 
-// Quiz State
 let currentQuestionIndex = 0;
 let answers = {};
 let quizStarted = false;
 
-// Initialize quiz
 document.addEventListener('DOMContentLoaded', function() {
   const startBtn = document.getElementById('start-quiz-btn');
   if (startBtn) {
@@ -108,29 +104,25 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Start Quiz
 function startQuiz() {
   quizStarted = true;
   currentQuestionIndex = 0;
   answers = {};
-  
+
   document.getElementById('start-screen').style.display = 'none';
   document.getElementById('progress-container').style.display = 'block';
   document.getElementById('quiz-container').style.display = 'block';
-  
+
   showQuestion(currentQuestionIndex);
   updateProgress();
 }
 
-// Show specific question
 function showQuestion(index) {
   const question = quizData.questions[index];
-  
-  // Check if question should be shown (conditional logic)
+
   if (question.conditional && question.id === 2) {
     const q1Answer = answers[1];
     if (q1Answer !== 'espresso' && q1Answer !== 'unsure') {
-      // Skip milk question, go to next
       currentQuestionIndex++;
       if (currentQuestionIndex < quizData.questions.length) {
         showQuestion(currentQuestionIndex);
@@ -138,9 +130,9 @@ function showQuestion(index) {
       return;
     }
   }
-  
+
   const container = document.getElementById('quiz-container');
-  
+
   const questionHTML = `
     <div class="question-card fade-in">
       <h2 class="question-text">${question.text}</h2>
@@ -154,17 +146,15 @@ function showQuestion(index) {
       ${index > 0 ? '<button class="back-btn" onclick="goBack()">← Back</button>' : ''}
     </div>
   `;
-  
+
   container.innerHTML = questionHTML;
   updateProgress();
 }
 
-// Select answer and move to next question
 function selectAnswer(questionId, value) {
   answers[questionId] = value;
-  
   currentQuestionIndex++;
-  
+
   if (currentQuestionIndex < quizData.questions.length) {
     showQuestion(currentQuestionIndex);
   } else {
@@ -172,7 +162,6 @@ function selectAnswer(questionId, value) {
   }
 }
 
-// Go back to previous question
 function goBack() {
   if (currentQuestionIndex > 0) {
     currentQuestionIndex--;
@@ -180,31 +169,28 @@ function goBack() {
   }
 }
 
-// Update progress bar
 function updateProgress() {
   const totalQuestions = quizData.questions.length;
   const answeredQuestions = Object.keys(answers).length;
   const progress = (answeredQuestions / totalQuestions) * 100;
-  
+
   const progressBar = document.getElementById('progress-bar');
   const progressText = document.getElementById('progress-text');
-  
+
   if (progressBar) progressBar.style.width = progress + '%';
   if (progressText) progressText.textContent = `Question ${currentQuestionIndex + 1} of ${totalQuestions}`;
 }
 
-// Determine result profile based on answers
 function determineProfile() {
-  const q1 = answers[1]; // Brewing method
-  const q2 = answers[2]; // Milk drinks
-  const q3 = answers[3]; // Grinder
-  const q4 = answers[4]; // Beans
-  const q5 = answers[5]; // Water
-  const q6 = answers[6]; // Budget
-  const q7 = answers[7]; // Patience
-  const q8 = answers[8]; // Frustration
-  
-  // Profile: Pour-Over Pro (Already Set)
+  const q1 = answers[1];
+  const q2 = answers[2];
+  const q3 = answers[3];
+  const q4 = answers[4];
+  const q5 = answers[5];
+  const q6 = answers[6];
+  const q7 = answers[7];
+  const q8 = answers[8];
+
   if (q1 === 'pourover' && q3 === 'quality' && (q4 === 'local' || q4 === 'online') && (q5 === 'filtered' || q5 === 'bottled')) {
     return {
       id: 'pourover_pro',
@@ -227,8 +213,7 @@ function determineProfile() {
       ] : []
     };
   }
-  
-  // Profile: Smart Espresso Beginner
+
   if (q1 === 'espresso' && (q3 === 'none' || q3 === 'blade' || q3 === 'basic') && (q6 === 'under200' || q6 === '200to500')) {
     let budgetAdvice = '';
     if (q6 === 'under200') {
@@ -236,7 +221,7 @@ function determineProfile() {
     } else {
       budgetAdvice = 'Manual: Flair Classic ($200) + 1Zpresso grinder ($160). OR Electric path: Save to $600 for Bambino Plus ($350) + entry electric grinder ($250).';
     }
-    
+
     return {
       id: 'espresso_beginner',
       title: 'The Smart Espresso Beginner 🎯',
@@ -254,8 +239,7 @@ function determineProfile() {
       ]
     };
   }
-  
-  // Profile: Filter Coffee Fan (Needs Grinder Upgrade)
+
   if (q1 === 'pourover' && (q3 === 'blade' || q3 === 'basic' || q3 === 'none')) {
     return {
       id: 'filter_coffee_fan',
@@ -274,33 +258,29 @@ function determineProfile() {
       ]
     };
   }
-  
-  // Profile: Troubleshooter (Bad Taste Issues)
+
   if (q8 === 'taste' || q8 === 'inconsistent') {
     const links = [];
-    
-    // Only show grinder link if they have bad grinder
+
     if (q3 === 'blade' || q3 === 'basic') {
       links.push({ label: 'Espresso Burr Grinders', keyword: 'espresso burr grinder' });
     }
-    
-    // Only show bean link if they have bad beans
+
     if (q4 === 'supermarket' || q4 === 'preground') {
       links.push({ label: 'Fresh Roasted Coffee Beans', keyword: 'fresh roasted coffee beans specialty' });
     }
-    
-    // Only show water link if they use tap water
+
     if (q5 === 'tap') {
       links.push({ label: 'Water Filter Pitchers', keyword: 'water filter pitcher brita' });
     }
-    
+
     return {
       id: 'troubleshooter',
       title: 'The Troubleshooter 🔧',
-      message: 'Your bad-tasting coffee ISN't your fault. It's usually one of three fixable things.',
+      message: 'Your bad-tasting coffee ISN\'t your fault. It\'s usually one of three fixable things.',
       fixes: [
         'Grind Size: Sour = too coarse (under-extracted), Bitter = too fine (over-extracted). Adjust in TINY increments.',
-        'Bean Freshness: Roasted more than 4 weeks ago? That's your problem. Check the roast date, not "best by" date.',
+        'Bean Freshness: Roasted more than 4 weeks ago? That\'s your problem. Check the roast date, not "best by" date.',
         'Water Quality: Tap water (especially hard or very soft) ruins extraction. Use filtered or bottled water.'
       ],
       toolsThatHelp: [
@@ -311,8 +291,7 @@ function determineProfile() {
       links: links
     };
   }
-  
-  // Profile: Convenience Seeker
+
   if (q7 === 'zero' || q7 === 'notvery' || q8 === 'time') {
     return {
       id: 'convenience_seeker',
@@ -331,22 +310,21 @@ function determineProfile() {
       ]
     };
   }
-  
-  // Profile: Milk Enthusiast
+
   if (q2 === 'yes' && q1 === 'espresso') {
     const links = [];
-    
+
     if (q6 === 'under200') {
       links.push({ label: 'Manual Milk Frothers', keyword: 'manual milk frother handheld electric' });
     }
-    
+
     links.push({ label: 'Espresso Machines with Steam Wand', keyword: 'espresso machine steam wand beginner' });
     links.push({ label: 'Milk Frothing Pitchers', keyword: 'milk frothing pitcher stainless steel' });
-    
+
     return {
       id: 'milk_enthusiast',
       title: 'The Milk Drink Enthusiast 🥛',
-      message: 'Frothing milk is an art—here's how to do it without a $2000 machine.',
+      message: 'Frothing milk is an art—here\'s how to do it without a $2000 machine.',
       advice: [
         'Under $200: Manual frother ($20) + stovetop milk warmer works!',
         '$200-500: Bambino or Bambino Plus ($350-450) has best steam wand under $500',
@@ -356,19 +334,18 @@ function determineProfile() {
       links: links
     };
   }
-  
-  // Profile: Fresh Starter
+
   if (q1 === 'unsure' || (q6 === 'under200' && q3 === 'none')) {
     return {
       id: 'fresh_starter',
       title: 'The Fresh Starter 🌱',
-      message: 'Don't start with espresso. Seriously. Here's the smarter path.',
+      message: 'Don\'t start with espresso. Seriously. Here\'s the smarter path.',
       advice: [
         'Start: French Press ($25) OR AeroPress ($35) + manual hand grinder ($50-70)',
         'Total: Under $100. Makes BETTER coffee than a $200 espresso setup.',
-        'Why? Forgiving, consistent, and you'll actually enjoy it vs troubleshooting hell.'
+        'Why? Forgiving, consistent, and you\'ll actually enjoy it vs troubleshooting hell.'
       ],
-      conclusion: 'After 3-6 months, decide: pour-over or espresso? By then you'll know if you're a tinkerer.',
+      conclusion: 'After 3-6 months, decide: pour-over or espresso? By then you\'ll know if you\'re a tinkerer.',
       links: [
         { label: 'French Press Coffee Makers', keyword: 'french press coffee maker' },
         { label: 'AeroPress Coffee Makers', keyword: 'aeropress coffee maker' },
@@ -377,12 +354,11 @@ function determineProfile() {
       ]
     };
   }
-  
-  // Default fallback profile
+
   return {
     id: 'general',
     title: 'Your Coffee Path 🌟',
-    message: 'Based on your answers, here's what matters most.',
+    message: 'Based on your answers, here\'s what matters most.',
     advice: [
       'Focus on the fundamentals: fresh beans, good grinder, proper water',
       'Technique beats expensive equipment every time',
@@ -396,19 +372,18 @@ function determineProfile() {
   };
 }
 
-// Show results
 function showResults() {
   const profile = determineProfile();
-  
+
   document.getElementById('progress-container').style.display = 'none';
   document.getElementById('quiz-container').style.display = 'none';
   document.getElementById('results-container').style.display = 'block';
-  
+
   const resultsHTML = `
     <div class="result-card fade-in">
       <h1 class="result-title">${profile.title}</h1>
       <p class="result-message">${profile.message}</p>
-      
+
       ${profile.whatYouHaveRight ? `
         <div class="advice-section">
           <h3>What You Have Right:</h3>
@@ -417,7 +392,7 @@ function showResults() {
           </ul>
         </div>
       ` : ''}
-      
+
       ${profile.advice ? `
         <div class="advice-section">
           <h3>Your Best Path Forward:</h3>
@@ -426,7 +401,7 @@ function showResults() {
           </ul>
         </div>
       ` : ''}
-      
+
       ${profile.fixes ? `
         <div class="advice-section">
           <h3>The Big 3 Fixes:</h3>
@@ -435,7 +410,7 @@ function showResults() {
           </ol>
         </div>
       ` : ''}
-      
+
       ${profile.toolsThatHelp ? `
         <div class="advice-section">
           <h3>Tools That Actually Help:</h3>
@@ -444,13 +419,13 @@ function showResults() {
           </ul>
         </div>
       ` : ''}
-      
+
       ${profile.warning ? `
         <div class="warning-box">
           ${profile.warning}
         </div>
       ` : ''}
-      
+
       ${profile.links && profile.links.length > 0 ? `
         <div class="links-section">
           <h3>Gear That Helps:</h3>
@@ -466,17 +441,17 @@ function showResults() {
           </div>
         </div>
       ` : ''}
-      
+
       <div class="conclusion-section">
         <p><strong>${profile.conclusion}</strong></p>
       </div>
-      
+
       <div class="feedback-section">
         <h3>Did this quiz help or miss the mark?</h3>
         <a href="mailto:${CONFIG.contactEmail}?subject=Coffee Quiz Feedback" class="feedback-btn">Send Feedback</a>
         <p class="small-text">This quiz improves weekly based on your input. Be brutally honest!</p>
       </div>
-      
+
       <div class="donation-section">
         <h3>☕ Did this quiz save you from a $500 mistake?</h3>
         <p>This site is 100% free and ad-free. If it helped, consider buying me a coffee!</p>
@@ -484,27 +459,24 @@ function showResults() {
         <p class="small-text">Suggested: $3-5 • Every donation keeps this site running and updated</p>
         <p class="small-text">Thank you for supporting independent coffee resources! ❤️</p>
       </div>
-      
+
       <button class="restart-btn" onclick="restartQuiz()">Start Over</button>
-      
+
       <div class="disclosure">
         <p>As an Amazon Associate, I earn from qualifying purchases. | <a href="${CONFIG.privacyPolicyUrl}">Privacy Policy</a></p>
         <p class="small-text">Last updated: October 22, 2025 based on Reddit feedback</p>
       </div>
     </div>
   `;
-  
+
   document.getElementById('results-container').innerHTML = resultsHTML;
-  
-  // Scroll to top
   window.scrollTo(0, 0);
 }
 
-// Restart quiz
 function restartQuiz() {
   currentQuestionIndex = 0;
   answers = {};
-  
+
   document.getElementById('results-container').style.display = 'none';
   document.getElementById('start-screen').style.display = 'block';
 }
