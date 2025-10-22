@@ -1,99 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoffeeMistakes.com - The Honest Coffee Gear Quiz</title>
-    <meta name="description" content="Take the brutally honest coffee quiz that tells you what NOT to buy. Built from 1000+ Reddit threads by coffee nerds. Free, no email required.">
-    <meta name="keywords" content="coffee quiz, espresso setup guide, coffee equipment guide, avoid coffee mistakes, coffee gear recommendations, James Hoffmann, pour over guide, espresso beginner">
-    <meta property="og:title" content="CoffeeMistakes.com - Stop Wasting Money on Coffee Gear">
-    <meta property="og:description" content="The quiz coffee nerds trust. Based on real Reddit advice from r/Coffee and r/espresso, not marketing BS.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://coffeemistakes.com">
-    <meta name="geo.region" content="US">
-    <meta name="geo.placename" content="United States">
-    <meta name="distribution" content="US">
-    <meta property="og:image" content="https://coffeemistakes.com/og-image.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="author" content="CoffeeMistakes.com">
-    <link rel="canonical" href="https://coffeemistakes.com/">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoffeeMistakes.com - The Honest Coffee Gear Quiz</title>
+  <meta name="description" content="Take the brutally honest coffee quiz that tells you what NOT to buy. Built from 1000+ Reddit threads by coffee nerds. Free, no email required.">
+  <meta name="keywords" content="coffee quiz, espresso setup guide, coffee equipment guide, avoid coffee mistakes, coffee gear recommendations, James Hoffmann, pour over guide, espresso beginner">
+  <meta name="author" content="CoffeeMistakes.com">
+  <meta property="og:title" content="CoffeeMistakes.com - Stop Wasting Money on Coffee Gear">
+  <meta property="og:description" content="The quiz coffee nerds trust. Based on real Reddit advice from r/Coffee and r/espresso, not marketing BS.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://coffeemistakes.com">
+  <meta name="geo.region" content="US">
+  <meta name="geo.placename" content="United States">
+  <meta name="distribution" content="US">
+  <link rel="canonical" href="https://coffeemistakes.com/">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="https://coffeemistakes.com/favicon.ico">
 </head>
 <body>
-    <div class="container">
-        <!-- Amazon Associates Disclosure -->
-        <div class="disclosure">
-            As an Amazon Associate, I earn from qualifying purchases.
+  <header class="site-header">
+    <h1 class="site-title">CoffeeMistakes.com</h1>
+    <nav>
+      <a href="https://coffeemistakes.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+      <a href="mailto:elmasryshadi@gmail.com">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="start-screen">
+      <div class="hero">
+        <h2>Stop Wasting Money on Coffee Gear That Disappoints</h2>
+        <p class="subtitle">Take the 2-minute quiz coffee nerds actually trust (and helped build).</p>
+        <ul class="benefits">
+          <li>✓ Built from 1000+ r/Coffee threads</li>
+          <li>✓ Tells you what NOT to buy</li>
+          <li>✓ Zero BS, just honest advice</li>
+        </ul>
+        <button id="start-quiz-btn" class="cta-btn">Start the Free Quiz →</button>
+        <p class="small-text">Free • No email • Takes 2 minutes • Updated weekly from real user feedback</p>
+        <div class="trust">
+          <span>Last updated: October 22, 2025 (Reddit-powered)</span>
         </div>
-
-        <div class="quiz-card">
-            <!-- Homepage / Start Screen -->
-            <div id="start-screen" class="start-screen">
-                <div class="hero">
-                    <h1>Stop Wasting Money on Coffee Gear That Disappoints</h1>
-                    <p class="subheadline">Take the 2-minute quiz coffee nerds actually trust (and helped build)</p>
-                    
-                    <div class="benefits">
-                        <div class="benefit">
-                            <span class="benefit-icon">📈</span>
-                            <span>Built from 1000+ r/Coffee threads</span>
-                        </div>
-                        <div class="benefit">
-                            <span class="benefit-icon">🚫</span>
-                            <span>Tells you what NOT to buy</span>
-                        </div>
-                        <div class="benefit">
-                            <span class="benefit-icon">💯</span>
-                            <span>Zero BS, just honest advice</span>
-                        </div>
-                    </div>
-                    
-                    <button class="cta-button" onclick="startQuiz()">Start the Free Quiz →</button>
-                    <p class="cta-subtext">Free • No email • Takes 2 minutes • Updated weekly based on your feedback</p>
-                </div>
-            </div>
-
-            <!-- Progress Bar -->
-            <div id="progress-container" class="progress-container" style="display: none;">
-                <div class="progress-bar">
-                    <div id="progress-fill" class="progress-fill"></div>
-                </div>
-                <p class="progress-text">Question <span id="current-question">1</span> of 8</p>
-            </div>
-
-            <!-- Quiz Questions -->
-            <div id="quiz-questions" style="display: none;">
-                <!-- Questions will be inserted here by JavaScript -->
-            </div>
-
-            <!-- Results -->
-            <div id="results" class="results" style="display: none;">
-                <!-- Results will be inserted here by JavaScript -->
-            </div>
+        <div class="reddit-link">
+          <a href="https://www.reddit.com/r/JamesHoffmann/comments/1och5ou/built_a_hoffmann_style_decision_tree_quiz_for/" target="_blank" rel="noopener">See what Reddit users are saying →</a>
         </div>
+      </div>
+    </section>
 
-        <!-- Footer -->
-        <div class="footer">
-            <div class="footer-content">
-                <div class="footer-left">
-                    CoffeeMistakes.com | Built by coffee lovers, for coffee lovers
-                </div>
-                <div class="footer-center">
-                    <a href="https://coffeemistakes.com/privacy-policy" target="_blank" class="footer-link">Privacy Policy</a> | 
-                    <a href="mailto:elmasryshadi@gmail.com" class="footer-link">Contact</a>
-                </div>
-                <div class="footer-right">
-                    As an Amazon Associate, I earn from qualifying purchases.
-                </div>
-                <div class="footer-support">
-                    <p class="feedback-note">Last updated: October 22, 2025 based on Reddit user feedback</p>
-                    <a href="https://www.reddit.com/r/JamesHoffmann/comments/1och5ou/built_a_hoffmann_style_decision_tree_quiz_for/" target="_blank" class="support-link">See what Reddit users are saying →</a>
-                </div>
-            </div>
-        </div>
+    <section id="progress-container" style="display:none;">
+      <div class="progress-bg">
+        <div id="progress-bar"></div>
+      </div>
+      <span id="progress-text"></span>
+    </section>
+
+    <section id="quiz-container" style="display:none;"></section>
+    <section id="results-container" style="display:none;"></section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div>CoffeeMistakes.com | Built by coffee lovers for coffee lovers</div>
+      <div>
+        <a href="https://coffeemistakes.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> | 
+        <a href="mailto:elmasryshadi@gmail.com">Contact</a>
+      </div>
+      <div>As an Amazon Associate, I earn from qualifying purchases.</div>
     </div>
-
-    <script src="script.js"></script>
+    <div class="footer-updated">Last updated: October 22, 2025 based on user feedback</div>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
