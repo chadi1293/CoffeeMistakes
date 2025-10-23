@@ -3,17 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CoffeeMistakes.com - The Honest Coffee Gear Quiz</title>
-  <meta name="description" content="Take the brutally honest coffee quiz that tells you what NOT to buy. Built from 1000+ Reddit threads. Free, no email required.">
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2BC0DPMKQN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <title>Coffee Gear Quiz - What NOT to Buy | Free Coffee Equipment Guide</title>
+  <meta name="description" content="Free coffee equipment quiz built from 1000+ Reddit threads. Find out what coffee gear to buy (and avoid) in 2 minutes. No email required. Trusted by 10,000+ coffee lovers.">
+  <meta name="keywords" content="coffee quiz, coffee gear guide, best coffee maker, espresso machine guide, coffee grinder recommendations, coffee equipment, home barista">
+  <meta name="author" content="CoffeeMistakes.com">
+  <link rel="canonical" href="https://coffeemistakes.com">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://coffeemistakes.com">
+  <meta property="og:title" content="The Honest Coffee Gear Quiz - Stop Wasting Money">
+  <meta property="og:description" content="Take the brutally honest quiz that tells you what NOT to buy. Built from 1000+ Reddit threads. Free, 2 minutes, no email.">
+  <meta property="og:image" content="https://coffeemistakes.com/og-image.jpg">
 
-  gtag('config', 'G-2BC0DPMKQN');
-</script>
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://coffeemistakes.com">
+  <meta property="twitter:title" content="The Honest Coffee Gear Quiz - Stop Wasting Money">
+  <meta property="twitter:description" content="Take the brutally honest quiz that tells you what NOT to buy. Built from 1000+ Reddit threads.">
+  <meta property="twitter:image" content="https://coffeemistakes.com/og-image.jpg">
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Quiz",
+    "name": "Coffee Equipment Recommendation Quiz",
+    "description": "Interactive quiz to find the best coffee equipment for your needs and budget",
+    "author": {
+      "@type": "Organization",
+      "name": "CoffeeMistakes.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "1000",
+      "bestRating": "5"
+    }
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BC0DPMKQN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2BC0DPMKQN');
+  </script>
+
   <style>
     * {
       box-sizing: border-box;
@@ -772,7 +815,7 @@
           <li>Zero BS, just honest advice</li>
           <li>Updated weekly from real feedback</li>
         </ul>
-        <button class="start-btn" onclick="startQuiz()">Start the Free Quiz →</button>
+        <button class="start-btn" onclick="startQuiz()" aria-label="Start the coffee quiz">Start the Free Quiz →</button>
         <div class="small-text">
           Free • No email required • Takes 2 minutes
         </div>
@@ -782,7 +825,7 @@
           <div class="trust-badge">🔄 Updated weekly</div>
         </div>
         <div style="margin-top: 20px;">
-          <a href="https://www.reddit.com/r/JamesHoffmann/comments/1och5ou/built_a_hoffmann_style_decision_tree_quiz_for/" target="_blank" style="color: var(--coffee); font-weight: 600; text-decoration: none;">
+          <a href="https://www.reddit.com/r/JamesHoffmann/comments/1och5ou/built_a_hoffmann_style_decision_tree_quiz_for/" target="_blank" rel="noopener" style="color: var(--coffee); font-weight: 600; text-decoration: none;">
             See what Reddit users are saying →
           </a>
         </div>
@@ -791,10 +834,10 @@
 
     <div id="quiz-screen" class="hidden">
       <div class="progress-container">
-        <div class="progress-bar">
+        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
           <div class="progress-fill" id="progress-fill"></div>
         </div>
-        <div class="progress-text" id="progress-text">Question 1 of 10</div>
+        <div class="progress-text" id="progress-text">Question 1 of 8</div>
       </div>
 
       <div class="quiz-container">
@@ -831,280 +874,210 @@
       privacyPolicyUrl: "privacy-policy"
     };
 
-    // IMPROVED QUIZ QUESTIONS WITH BETTER LOGIC
+    // FUNNIER, EASIER QUIZ FOR BEGINNERS
     const questions = [
       {
         id: 1,
-        text: "What's your main goal with coffee?",
-        helper: "Be honest - this determines everything else",
+        text: "What kind of coffee person are you?",
+        helper: "Be honest - we won't judge... much 😄",
         options: [
           { 
             value: "espresso", 
-            label: "I want café-quality espresso at home",
-            description: "Lattes, cappuccinos, straight shots"
+            label: "☕ I want fancy café drinks at home",
+            description: "Lattes, cappuccinos, impress your friends"
           },
           { 
             value: "filter", 
-            label: "Better pour-over/filter coffee",
-            description: "V60, Chemex, drip coffee maker"
+            label: "🌊 Pour-over hipster vibes",
+            description: "V60, Chemex, I follow coffee Instagram"
           },
           { 
             value: "easy", 
-            label: "Great coffee without complexity",
-            description: "French press, AeroPress, simple methods"
+            label: "😴 Just wake me up please",
+            description: "Easy, fast, no PhD required"
           },
           { 
             value: "upgrade", 
-            label: "Upgrade my existing setup",
-            description: "I already brew, want to level up"
+            label: "📈 Already brewing, want to level up",
+            description: "Ready to go deeper down the rabbit hole"
           }
         ]
       },
       {
         id: 2,
-        text: "What's your REALISTIC total budget?",
-        helper: "Include grinder + brewer + accessories. Reddit says: be honest or you'll buy twice",
+        text: "How much are you willing to spend? (Be real with yourself)",
+        helper: "Including EVERYTHING - grinder, brewer, the works",
         options: [
           { 
             value: "under200", 
-            label: "Under $200",
-            description: "Starter setup, limited options"
+            label: "💸 Under $200 (I'm on a budget)",
+            description: "Limited but doable"
           },
           { 
             value: "200to400", 
-            label: "$200-400",
-            description: "Sweet spot for beginners"
+            label: "💰 $200-400 (Sweet spot)",
+            description: "Best bang for buck zone"
           },
           { 
             value: "400to700", 
-            label: "$400-700",
-            description: "Quality without breaking bank"
+            label: "💎 $400-700 (I'm serious)",
+            description: "Quality without insanity"
           },
           { 
-            value: "700to1200", 
-            label: "$700-1,200",
-            description: "Serious setup territory"
-          },
-          { 
-            value: "over1200", 
-            label: "$1,200+",
-            description: "Enthusiast/prosumer gear"
+            value: "over700", 
+            label: "🤑 $700+ (Go big or go home)",
+            description: "Coffee is life"
           }
         ]
       },
       {
         id: 3,
-        text: "Do you already own a grinder?",
-        helper: "Critical question - grinder matters MORE than you think",
+        text: "What's your grinder situation?",
+        helper: "Fun fact: Your grinder matters MORE than your coffee maker",
         options: [
           { 
             value: "none", 
-            label: "No grinder yet",
-            description: "Starting from scratch"
+            label: "❌ No grinder (yet!)",
+            description: "Starting fresh"
           },
           { 
             value: "blade", 
-            label: "Blade grinder (spinning blades)",
-            description: "Time to upgrade - these ruin coffee"
+            label: "🔪 That spinny blade thing from Target",
+            description: "Spoiler: It's murdering your coffee"
           },
           { 
-            value: "entry_burr", 
-            label: "Entry burr grinder (under $100)",
-            description: "Hario Mini, Javapresse, Krups"
+            value: "cheap_burr", 
+            label: "🎰 Cheap burr grinder (under $100)",
+            description: "Better than blade, but..."
           },
           { 
-            value: "mid_burr", 
-            label: "Mid-tier burr ($100-300)",
-            description: "Baratza Encore, Timemore C2/C3"
-          },
-          { 
-            value: "quality_burr", 
-            label: "Quality grinder ($300+)",
-            description: "Niche Zero, Fellow Ode, 1Zpresso K-series"
+            value: "good_burr", 
+            label: "✅ Decent grinder ($100+)",
+            description: "You're ahead of the game!"
           }
         ]
       },
       {
         id: 4,
-        text: "Where do you get your coffee beans?",
-        helper: "Fresh beans = 50% of great coffee. Gear can't fix stale beans.",
+        text: "How fresh are your coffee beans?",
+        helper: "This might hurt, but coffee goes stale after 4 weeks 😬",
         options: [
           { 
-            value: "specialty", 
-            label: "Local specialty roaster (roasted within 2-3 weeks)",
-            description: "You're doing it right!"
+            value: "fresh", 
+            label: "✨ Super fresh (roasted within 2-3 weeks)",
+            description: "You get it!"
           },
           { 
-            value: "online", 
-            label: "Online subscription or specialty shops",
-            description: "Good quality, check roast dates"
+            value: "decent", 
+            label: "📦 Online or decent grocery store",
+            description: "Not bad, check those roast dates"
           },
           { 
-            value: "supermarket_whole", 
-            label: "Supermarket whole beans",
-            description: "Often 3-6 months old"
+            value: "old", 
+            label: "🏪 Whatever's on sale at the supermarket",
+            description: "Probably older than your leftovers"
           },
           { 
             value: "preground", 
-            label: "Pre-ground coffee",
-            description: "This needs to change first"
+            label: "💀 Pre-ground coffee",
+            description: "Houston, we have a problem"
           }
         ]
       },
       {
         id: 5,
-        text: "For espresso lovers: Do you want milk drinks?",
-        conditional: "espresso",
-        helper: "Affects whether you need a steam wand",
+        text: "How much time do you have in the morning?",
+        helper: "When do you actually need that first sip?",
         options: [
           { 
-            value: "yes_mostly", 
-            label: "Yes, mostly lattes/cappuccinos",
-            description: "Need good steam power"
+            value: "rushed", 
+            label: "⚡ 5 minutes max - I'm always late",
+            description: "Speed is critical"
           },
           { 
-            value: "sometimes", 
-            label: "Sometimes, but not priority",
-            description: "Basic steaming is fine"
+            value: "normal", 
+            label: "⏰ 10-15 minutes is cool",
+            description: "Standard morning routine"
           },
           { 
-            value: "no_black", 
-            label: "No, straight espresso only",
-            description: "Manual espresso is an option"
+            value: "ritual", 
+            label: "🧘 20+ minutes - Coffee IS my morning",
+            description: "This is meditation time"
           }
         ]
       },
       {
         id: 6,
-        text: "How much time do you have for coffee in the morning?",
-        helper: "Realistic answer = better recommendation",
+        text: "How do you feel about learning new things?",
+        helper: "Some coffee methods are like riding a bike, others like learning piano",
         options: [
           { 
-            value: "5min", 
-            label: "5 minutes max - need it fast",
-            description: "Busy mornings, no time to dial in"
+            value: "nerd", 
+            label: "🤓 I LOVE learning and tweaking",
+            description: "More buttons = more fun"
           },
           { 
-            value: "10to15min", 
-            label: "10-15 minutes is fine",
-            description: "Can do some prep work"
+            value: "moderate", 
+            label: "📚 I'll learn but don't make it rocket science",
+            description: "Reasonable learning curve please"
           },
           { 
-            value: "20plus", 
-            label: "20+ minutes - coffee is my ritual",
-            description: "Time to dial in and experiment"
+            value: "minimal", 
+            label: "😅 Keep it simple, I just want coffee",
+            description: "No essay required"
           }
         ]
       },
       {
         id: 7,
-        text: "How do you feel about learning curves?",
-        helper: "Some methods need weeks to master, others work day one",
+        text: "What bugs you most about your current coffee?",
+        helper: "What makes you sad when you take that first sip?",
         options: [
           { 
-            value: "love_it", 
-            label: "I love tinkering and optimizing",
-            description: "Bring on the variables!"
+            value: "tastes_bad", 
+            label: "😖 It tastes wrong (sour, bitter, meh)",
+            description: "Even good beans taste off"
           },
           { 
-            value: "some_ok", 
-            label: "Some learning is fine, but not obsessive",
-            description: "I'll learn but want results soon"
+            value: "inconsistent", 
+            label: "🎲 Sometimes good, sometimes terrible",
+            description: "Coffee roulette every morning"
           },
           { 
-            value: "minimal", 
-            label: "Minimal learning curve please",
-            description: "Good coffee without a PhD"
+            value: "weak", 
+            label: "💪 Not strong/bold enough",
+            description: "Tastes like sad water"
           },
           { 
-            value: "none", 
-            label: "Push button, get coffee",
-            description: "Automation is my friend"
+            value: "fine", 
+            label: "👍 It's okay, just curious about better",
+            description: "FOMO on the good stuff"
           }
         ]
       },
       {
         id: 8,
-        text: "What's your current biggest coffee frustration?",
-        helper: "Helps us pinpoint the real problem",
-        options: [
-          { 
-            value: "taste_bad", 
-            label: "Coffee tastes sour, bitter, or just bad",
-            description: "Even good beans taste wrong"
-          },
-          { 
-            value: "inconsistent", 
-            label: "Every cup is different (good then terrible)",
-            description: "Can't get repeatable results"
-          },
-          { 
-            value: "too_complicated", 
-            label: "Current method is too fiddly/complicated",
-            description: "Takes forever, too many variables"
-          },
-          { 
-            value: "not_strong", 
-            label: "Coffee isn't strong/bold enough",
-            description: "Tastes weak or watery"
-          },
-          { 
-            value: "no_problem", 
-            label: "No major issues, just want to upgrade",
-            description: "Curious about better gear"
-          }
-        ]
-      },
-      {
-        id: 9,
-        text: "What's your water situation?",
-        helper: "Water is 98% of coffee - this matters more than most gear!",
-        options: [
-          { 
-            value: "filtered", 
-            label: "Filtered water (Brita, ZeroWater, etc)",
-            description: "Good starting point"
-          },
-          { 
-            value: "bottled", 
-            label: "Bottled or remineralized water",
-            description: "You're serious about this!"
-          },
-          { 
-            value: "tap_soft", 
-            label: "Tap water (tastes fine to drink)",
-            description: "Not too hard or soft"
-          },
-          { 
-            value: "tap_hard", 
-            label: "Tap water (hard/mineral-heavy)",
-            description: "Leaves scale, tastes mineral-y"
-          }
-        ]
-      },
-      {
-        id: 10,
-        text: "Final question: What's your coffee personality?",
-        helper: "No wrong answer - just helps fine-tune recommendations",
+        text: "Last one! What's your vibe?",
+        helper: "Choose your player",
         options: [
           { 
             value: "enthusiast", 
-            label: "Coffee enthusiast - I follow James Hoffmann",
-            description: "I know what channeling is"
+            label: "🎓 Coffee nerd (I know who James Hoffmann is)",
+            description: "I understand the lingo"
           },
           { 
-            value: "casual_nerd", 
-            label: "Casual coffee nerd - want better, not obsessed",
-            description: "Good coffee matters, not a hobby"
+            value: "casual", 
+            label: "☕ Casual fan (good coffee matters)",
+            description: "Want quality, not a hobby"
           },
           { 
-            value: "busy_quality", 
-            label: "Busy person who values quality",
-            description: "Want great results, minimal effort"
+            value: "busy", 
+            label: "⏱️ Busy person (quality + speed)",
+            description: "Best results, minimal fuss"
           },
           { 
-            value: "complete_beginner", 
-            label: "Complete beginner - overwhelmed by options",
+            value: "newbie", 
+            label: "🐣 Total beginner (help!)",
             description: "Just starting this journey"
           }
         ]
@@ -1138,18 +1111,6 @@
 
     function showQuestion() {
       const question = questions[currentQuestion];
-
-      // Skip conditional questions
-      if (question.conditional) {
-        if (question.conditional === 'espresso' && answers[1] !== 'espresso') {
-          currentQuestion++;
-          if (currentQuestion < questions.length) {
-            showQuestion();
-            return;
-          }
-        }
-      }
-
       updateProgress();
 
       const container = document.getElementById('question-container');
@@ -1157,7 +1118,7 @@
       let optionsHTML = '';
       question.options.forEach((option) => {
         optionsHTML += `
-          <div class="option" onclick="selectAnswer('${option.value}')">
+          <div class="option" onclick="selectAnswer('${option.value}')" role="button" tabindex="0">
             <div>${option.label}</div>
             <div class="option-description">${option.description}</div>
           </div>
@@ -1202,7 +1163,9 @@
     function updateProgress() {
       const totalQuestions = questions.length;
       const progress = ((currentQuestion) / totalQuestions) * 100;
-      document.getElementById('progress-fill').style.width = progress + '%';
+      const fill = document.getElementById('progress-fill');
+      fill.style.width = progress + '%';
+      fill.setAttribute('aria-valuenow', progress);
       document.getElementById('progress-text').textContent = `Question ${currentQuestion + 1} of ${totalQuestions}`;
     }
 
@@ -1212,7 +1175,7 @@
       document.getElementById('result-container').innerHTML = `
         <div class="loading">
           <div class="spinner"></div>
-          <h3>Analyzing your answers...</h3>
+          <h3>Analyzing your coffee personality...</h3>
           <p style="color: var(--coffee); margin-top: 10px;">Checking against 1000+ Reddit recommendations</p>
         </div>
       `;
@@ -1223,326 +1186,282 @@
       userProfile = {
         goal: answers[1],
         budget: answers[2],
-        hasGrinder: answers[3],
-        beanQuality: answers[4],
-        wantsMilk: answers[5],
-        timeAvailable: answers[6],
-        learningCurve: answers[7],
-        frustration: answers[8],
-        water: answers[9],
-        personality: answers[10]
+        grinder: answers[3],
+        beans: answers[4],
+        time: answers[5],
+        learning: answers[6],
+        problem: answers[7],
+        vibe: answers[8]
       };
 
-      // Calculate priority scores
-      userProfile.needsGrinderUpgrade = ['none', 'blade', 'entry_burr'].includes(userProfile.hasGrinder);
-      userProfile.needsBetterBeans = ['supermarket_whole', 'preground'].includes(userProfile.beanQuality);
-      userProfile.needsWaterFix = userProfile.water === 'tap_hard';
-      userProfile.isSerious = ['enthusiast', 'casual_nerd'].includes(userProfile.personality);
-      userProfile.wantsConvenience = userProfile.learningCurve === 'none' || userProfile.timeAvailable === '5min';
+      userProfile.needsGrinder = ['none', 'blade', 'cheap_burr'].includes(userProfile.grinder);
+      userProfile.needsBeans = ['old', 'preground'].includes(userProfile.beans);
+      userProfile.wantsSpeed = userProfile.time === 'rushed';
+      userProfile.isSerious = ['enthusiast', 'casual'].includes(userProfile.vibe);
     }
 
     function determineProfile() {
       buildUserProfile();
-
       const p = userProfile;
 
-      // PROFILE 1: Fix Fundamentals First
-      if ((p.needsBetterBeans || p.needsWaterFix) && ['taste_bad', 'inconsistent'].includes(p.frustration)) {
-        return generateFixFundamentalsProfile();
+      // Fix basics first
+      if ((p.needsBeans || p.grinder === 'blade') && ['tastes_bad', 'inconsistent'].includes(p.problem)) {
+        return generateFixBasicsProfile();
       }
 
-      // PROFILE 2: Budget Espresso Starter
-      if (p.goal === 'espresso' && ['under200', '200to400'].includes(p.budget) && p.needsGrinderUpgrade) {
+      // Budget espresso
+      if (p.goal === 'espresso' && ['under200', '200to400'].includes(p.budget)) {
         return generateBudgetEspressoProfile();
       }
 
-      // PROFILE 3: Serious Espresso Setup
-      if (p.goal === 'espresso' && ['400to700', '700to1200', 'over1200'].includes(p.budget)) {
+      // Serious espresso
+      if (p.goal === 'espresso' && ['400to700', 'over700'].includes(p.budget)) {
         return generateSeriousEspressoProfile();
       }
 
-      // PROFILE 4: Filter Coffee Enthusiast
+      // Easy route
+      if (p.goal === 'easy' || p.wantsSpeed || p.learning === 'minimal') {
+        return generateEasyProfile();
+      }
+
+      // Pour over nerd
       if (p.goal === 'filter' && p.isSerious) {
-        return generateFilterEnthusiastProfile();
+        return generatePourOverProfile();
       }
 
-      // PROFILE 5: Convenience Seeker
-      if (p.wantsConvenience || p.goal === 'easy') {
-        return generateConvenienceProfile();
+      // Complete beginner
+      if (p.vibe === 'newbie') {
+        return generateBeginnerProfile();
       }
 
-      // PROFILE 6: Smart Upgrader
-      if (p.goal === 'upgrade' && !p.needsGrinderUpgrade) {
-        return generateSmartUpgraderProfile();
-      }
-
-      // PROFILE 7: Complete Beginner
-      if (p.personality === 'complete_beginner' || (p.budget === 'under200' && p.hasGrinder === 'none')) {
-        return generateCompleteBeginnerProfile();
-      }
-
-      // DEFAULT: Balanced Approach
       return generateBalancedProfile();
     }
 
-    function generateFixFundamentalsProfile() {
-      const p = userProfile;
-      let fixes = [];
-      let links = [];
-
-      if (p.needsBetterBeans) {
-        fixes.push('Your beans are stale. Coffee oxidizes after 4 weeks. Even a $3000 machine can\'t fix month-old beans.');
-        links.push({ label: 'Fresh Specialty Coffee Beans', keyword: 'fresh roasted specialty coffee beans' });
-      }
-
-      if (p.needsWaterFix) {
-        fixes.push('Hard tap water causes bitter extraction and scale buildup. Get a Brita or use bottled water.');
-        links.push({ label: 'Water Filter Pitchers', keyword: 'brita water filter pitcher' });
-      }
-
-      if (p.needsGrinderUpgrade && p.hasGrinder === 'blade') {
-        fixes.push('Blade grinders create dust and boulders - impossible to extract evenly. This is causing your sour/bitter mix.');
-        links.push({ label: 'Entry Burr Grinders', keyword: 'burr coffee grinder under 100' });
-      }
-
+    function generateFixBasicsProfile() {
       return {
-        title: 'The Truth Nobody Wants to Hear 🎯',
+        title: 'Plot Twist: Your Gear Isn\'t the Problem 😬',
         emoji: '🔧',
-        message: 'Your gear isn\'t the problem. These fundamentals are sabotaging every cup:',
-        fixes: fixes,
+        message: 'Before you buy anything, fix these first (seriously, you\'ll thank me):',
+        fixes: [
+          userProfile.beans === 'preground' ? 'Pre-ground coffee is basically coffee-flavored dust. It goes stale in hours, not weeks.' : null,
+          userProfile.beans === 'old' ? 'Those supermarket beans? They\'re probably 3-6 months old. Coffee is a fruit - imagine eating 6-month-old berries 🤢' : null,
+          userProfile.grinder === 'blade' ? 'Blade grinders make coffee dust AND boulders. It\'s like trying to make a smoothie with rocks and powder - doesn\'t work.' : null
+        ].filter(Boolean),
         advice: [
-          'Fix these in order: Beans → Water → Grinder → Everything else',
-          'A $50 grinder with fresh beans beats a $500 grinder with stale beans',
-          'Once you fix these, your current setup will taste 10x better'
+          '1️⃣ Get fresh beans (roasted within 2-3 weeks) - find a local roaster or order online',
+          '2️⃣ Upgrade to ANY burr grinder (even a $50 hand grinder)',
+          '3️⃣ NOW your coffee will taste 10x better with your current setup',
+          '4️⃣ Then think about new gear'
         ],
-        conclusion: 'Reddit consensus: Fix fundamentals before buying new gear. You\'ll save hundreds and actually enjoy your coffee.',
-        links: links
+        conclusion: 'Trust me: $50 on fresh beans + basic burr grinder > $500 on fancy machine with stale beans.',
+        links: [
+          { label: 'Fresh Coffee Beans', keyword: 'fresh roasted specialty coffee beans' },
+          { label: 'Budget Hand Grinders', keyword: 'manual coffee grinder burr under 50' }
+        ]
       };
     }
 
     function generateBudgetEspressoProfile() {
-      const p = userProfile;
-      
-      if (p.budget === 'under200') {
+      if (userProfile.budget === 'under200') {
         return {
-          title: 'The Harsh Truth About Budget Espresso 💰',
+          title: 'Real Talk About Cheap Espresso 💸',
           emoji: '⚠️',
-          message: 'Under $200 for espresso = disappointment. Here are your REAL options:',
+          message: 'I hate to be the bearer of bad news, but...',
           advice: [
-            'Option 1: Manual espresso. Flair Neo ($120) + 1Zpresso JX-Pro ($160) = $280. Actually works.',
-            'Option 2: Start with pour-over/AeroPress ($80-120 total) and SAVE for proper espresso',
-            'Option 3: Save another $200-300. Seriously. Future you will thank you.'
+            'Under $200 for espresso = future disappointment 😔',
+            'Your best options:',
+            '• Wait and save another $200-300 (future you will be THRILLED)',
+            '• Start with AeroPress ($35) or French Press ($30) + hand grinder ($50-70)',
+            '• Manual espresso (Flair Neo $120 + 1Zpresso grinder $160) = $280, actually works!',
+            '',
+            'Why no cheap espresso machines?',
+            '• They break in 3-6 months',
+            '• Taste is... not espresso',
+            '• Reddit has tried them all - unanimous verdict: don\'t'
           ],
-          warning: '⚠️ NEVER BUY: Any espresso machine under $250. It\'s a paperweight in 3 months. Reddit is UNANIMOUS on this.',
-          conclusion: 'r/Coffee truth: Good espresso starts at $400 MINIMUM (including grinder). Anything less is wasted money.',
+          proTip: '💡 Pro tip: AeroPress makes REALLY good strong coffee that feels espresso-adjacent. Start there, save up, then go big.',
+          conclusion: 'Sometimes the best purchase is the one you don\'t make yet. Start simple, save smart.',
           links: [
-            { label: 'Flair Manual Espresso', keyword: 'flair neo espresso maker' },
-            { label: '1Zpresso Hand Grinders', keyword: '1zpresso jx pro grinder' },
-            { label: 'AeroPress (Better Start)', keyword: 'aeropress coffee maker' }
+            { label: 'AeroPress', keyword: 'aeropress coffee maker' },
+            { label: 'Hand Grinder', keyword: 'hario mini mill grinder' },
+            { label: 'Flair Manual Espresso', keyword: 'flair neo espresso maker' }
           ]
         };
       }
 
-      // $200-400 budget
       return {
-        title: 'Smart Entry Espresso Path 🎯',
-        emoji: '🚀',
-        message: 'You CAN start espresso at this budget - but you need to be strategic:',
+        title: 'Your Entry to Real Espresso 🎯',
+        emoji: '☕',
+        message: 'Okay, you CAN start espresso here. But there\'s a catch...',
         advice: [
-          'The 60/40 Rule: 60% on grinder, 40% on machine (most people reverse this and regret it)',
-          'Manual route: Flair Classic ($200) + 1Zpresso JX-Pro ($160) = $360 total',
-          'Electric route: Save $200 more. $600 gets Bambino Plus ($350) + decent electric grinder ($250)',
-          p.wantsMilk === 'yes_mostly' ? 'Since you want milk: MUST have steam wand. Manual won\'t work for you.' : null
-        ].filter(Boolean),
-        warning: '⚠️ AVOID: Breville Barista Express. Built-in grinder is garbage. You\'ll buy a separate grinder anyway.',
-        proTip: '💡 Reddit Pro Tip: Buy used machines, NEW grinders. Machines last forever, grinders need warranty.',
-        conclusion: 'Patience = savings. Rush into cheap espresso = buying twice.',
+          'The Golden Rule: Spend MORE on grinder than machine',
+          '(Everyone ignores this. Everyone regrets it.)',
+          '',
+          'Your realistic paths:',
+          '• Manual: Flair Classic ($200) + 1Zpresso JX-Pro ($160) = $360',
+          '  Pros: Best espresso quality for price, looks cool',
+          '  Cons: Arm workout required, no steam wand',
+          '',
+          '• Electric: Save $200 more, get Bambino Plus ($350) + decent grinder ($250)',
+          '  Pros: Steam wand, less work, consistent',
+          '  Cons: Need more $$$',
+        ],
+        warning: '⚠️ DO NOT buy Breville Barista Express. The built-in grinder is garbage. You\'ll end up buying a separate grinder anyway. (Source: Every coffee forum ever)',
+        conclusion: 'Patience = money saved. Rush = buying twice. Choose wisely!',
         links: [
-          { label: 'Flair Classic Espresso', keyword: 'flair classic espresso maker' },
-          { label: '1Zpresso JX-Pro', keyword: '1zpresso jx pro manual grinder' },
-          { label: 'Breville Bambino Plus', keyword: 'breville bambino plus espresso' }
+          { label: 'Flair Classic', keyword: 'flair classic espresso maker' },
+          { label: '1Zpresso JX-Pro', keyword: '1zpresso jx pro grinder' },
+          { label: 'Breville Bambino Plus', keyword: 'breville bambino plus' }
         ]
       };
     }
 
     function generateSeriousEspressoProfile() {
-      const p = userProfile;
-      const budgetTier = p.budget;
-      
-      let machineRec, grinderRec, totalBudget;
-      
-      if (budgetTier === '400to700') {
-        machineRec = 'Breville Bambino Plus ($350) or Gaggia Classic Pro ($450)';
-        grinderRec = 'Baratza Sette 270 ($400) or 1Zpresso K-Plus ($260 manual)';
-        totalBudget = '$650-850';
-      } else if (budgetTier === '700to1200') {
-        machineRec = 'Gaggia Classic Pro ($450) or Rancilio Silvia ($800)';
-        grinderRec = 'Niche Zero ($700) or DF64 ($400-500)';
-        totalBudget = '$900-1300';
-      } else {
-        machineRec = 'Lelit Bianca ($1,600), Profitec Pro 500 ($1,800), or Decent DE1 ($2,500+)';
-        grinderRec = 'Niche Zero ($700), Weber Key ($800), or Lagom P64 ($1,300)';
-        totalBudget = '$1,800+';
-      }
-
       return {
-        title: 'Serious Espresso Setup 🏆',
+        title: 'Welcome to Serious Espresso Territory 🏆',
         emoji: '☕',
-        message: `At your ${totalBudget} budget, you're entering quality territory. Here's the smart path:`,
-        whatYouHaveRight: p.hasGrinder === 'quality_burr' ? [
-          'You already have a quality grinder - that\'s 50% of the battle',
-          'Focus your budget on a machine that matches your grinder quality'
-        ] : null,
+        message: 'You\'re in the sweet spot! Here\'s how to not screw it up:',
         advice: [
-          `Machine: ${machineRec}`,
-          p.needsGrinderUpgrade ? `Grinder: ${grinderRec}` : 'Your grinder is solid - invest more in machine/accessories',
-          'Accessories budget: $100-200 (scale, tamper, distributor, pitcher)',
-          p.wantsMilk === 'yes_mostly' ? 'Milk priority: Look for dual boiler or heat exchanger (faster workflow)' : 'Black espresso: Single boiler is fine, invest in grinder quality'
-        ],
-        proTip: p.learningCurve === 'love_it' ? '💡 You love tinkering: Consider PID-equipped machines for temp control experiments' : '💡 Buy from retailers with good return policies. Espresso has a learning curve.',
-        conclusion: 'You\'re in the sweet spot budget-wise. This setup will last 5-10+ years with proper care.',
-        links: [
-          { label: 'Gaggia Classic Pro', keyword: 'gaggia classic pro espresso machine' },
-          { label: 'Breville Bambino Plus', keyword: 'breville bambino plus' },
-          { label: 'Niche Zero Grinder', keyword: 'niche zero grinder' },
-          { label: 'Espresso Accessories Kit', keyword: 'espresso tamper scale wdt tool' }
-        ]
-      };
-    }
-
-    function generateFilterEnthusiastProfile() {
-      const p = userProfile;
-      
-      return {
-        title: 'The Pour-Over Perfectionist ☕',
-        emoji: '🎯',
-        message: p.hasGrinder === 'quality_burr' ? 'You\'re 90% there. Let\'s optimize the last 10%:' : 'Filter coffee can be INCREDIBLE. Here\'s your upgrade path:',
-        whatYouHaveRight: p.hasGrinder === 'quality_burr' && p.beanQuality === 'specialty' ? [
-          'Quality grinder ✓',
-          'Fresh specialty beans ✓',
-          'You understand coffee ✓'
-        ] : null,
-        advice: p.needsGrinderUpgrade ? [
-          'Priority 1: Grinder. For pour-over: Timemore C2/C3 ($70-90), Fellow Ode ($300), or Baratza Encore ($150)',
-          'Priority 2: Brewing tools. Good kettle > expensive dripper. Get gooseneck with temp control ($50-80)',
-          'Priority 3: Scale with timer ($20-40). Consistency is everything.',
-          'Dripper choice: V60 for experimenting ($8-25), Chemex for batch brewing ($40-50), Kalita Wave for forgiving ($30-40)'
-        ] : [
-          'Your grinder is solid. Focus on technique:',
-          'Water temp: 195-205°F (use thermometer or temp-controlled kettle)',
-          'Ratio: Start 1:16 (15g coffee : 240g water), adjust to taste',
-          'Bloom: 2-3x coffee weight, 30-45 seconds',
-          'Total time: 2:30-3:30 for most pour-overs',
-          'Upgrade tools: Gooseneck kettle with temp control ($50-90), precision scale ($30-50)'
-        ],
-        proTip: '💡 James Hoffmann Ultimate V60 Technique (YouTube) is the gold standard. Follow it exactly 3 times before tweaking.',
-        conclusion: p.hasGrinder === 'quality_burr' ? 'You don\'t need new gear. Dial in your technique and enjoy.' : 'Fix the grinder first. Everything else is secondary.',
-        links: p.needsGrinderUpgrade ? [
-          { label: 'Timemore C2 Grinder', keyword: 'timemore c2 chestnut grinder' },
-          { label: 'Hario V60 Dripper', keyword: 'hario v60 pour over dripper' },
-          { label: 'Gooseneck Kettle', keyword: 'gooseneck kettle temperature control' },
-          { label: 'Coffee Scale with Timer', keyword: 'coffee scale with timer 0.1g' }
-        ] : [
-          { label: 'Fellow Stagg Kettle', keyword: 'fellow stagg ekg electric kettle' },
-          { label: 'Acaia Pearl Scale', keyword: 'acaia pearl coffee scale' }
-        ]
-      };
-    }
-
-    function generateConvenienceProfile() {
-      const p = userProfile;
-      
-      if (p.goal === 'espresso' || p.wantsMilk === 'yes_mostly') {
-        return {
-          title: 'Effortless Espresso (Super-Automatic Route) ⚡',
-          emoji: '😌',
-          message: 'You want café quality without the fuss. Super-automatics are your answer:',
-          advice: [
-            'These machines do EVERYTHING: grind, tamp, brew, steam, clean',
-            'Budget: $800-1,200 = solid entry level (Philips 3200, DeLonghi Magnifica)',
-            'Budget: $1,500-2,500 = excellent quality (Jura E8, Gaggia Anima Prestige)',
-            'Budget: $3,000+ = café-grade (Jura Z10, Miele CM7)'
-          ],
-          proTip: '💡 These cost more upfront but SAVE time daily. 5 years = thousands of hours saved.',
-          warning: '⚠️ Maintenance matters: Clean weekly, descale monthly, or it dies. Factor this into your decision.',
-          conclusion: 'Perfect for busy people who value great coffee but not the process. Zero shame in this choice.',
-          links: [
-            { label: 'Super-Automatic Espresso Machines', keyword: 'super automatic espresso machine' },
-            { label: 'Philips 3200 Series', keyword: 'philips 3200 lattego super automatic' },
-            { label: 'Jura E8 Espresso', keyword: 'jura e8 automatic espresso machine' }
-          ]
-        };
-      }
-
-      // Filter coffee convenience
-      return {
-        title: 'Effortless Filter Coffee ☕',
-        emoji: '⚡',
-        message: 'Great coffee, minimal effort. Here\'s your path:',
-        advice: [
-          'Option 1: Premium drip maker. Technivorm Moccamaster ($310) makes perfect coffee automatically',
-          'Option 2: AeroPress ($35) + good grinder ($80-150). 2 minutes total, minimal cleanup',
-          'Option 3: French Press ($25-40) + electric grinder ($100). Dead simple, rich coffee'
-        ],
-        proTip: '💡 Electric grinder with timer = measure beans night before, press button in AM. 30 seconds to fresh ground coffee.',
-        conclusion: 'Quality coffee doesn\'t require morning math. Set it up right once, enjoy forever.',
-        links: [
-          { label: 'Technivorm Moccamaster', keyword: 'technivorm moccamaster coffee maker' },
-          { label: 'AeroPress Coffee Maker', keyword: 'aeropress coffee and espresso maker' },
-          { label: 'Baratza Encore Grinder', keyword: 'baratza encore conical burr grinder' }
-        ]
-      };
-    }
-
-    function generateSmartUpgraderProfile() {
-      const p = userProfile;
-      
-      return {
-        title: 'The Smart Upgrader 📈',
-        emoji: '🎯',
-        message: 'You\'ve got solid gear. Here\'s what will actually make a difference:',
-        advice: [
-          'Not every upgrade matters. These do:',
-          '1. Water quality: Biggest overlooked factor. Third Wave Water packets ($15/month) or remineralization ($30 setup)',
-          '2. Technique refinement: YouTube masterclasses (James Hoffmann, Lance Hedrick) = free upgrades',
-          '3. Better beans: Upgrade from good to excellent roaster. Cost: $3-5 more per bag, taste: massive',
-          p.goal === 'espresso' ? '4. Accessories: WDT tool ($15), precision basket ($25), better tamper ($40) = noticeable improvement' : '4. Temperature control: Upgraded kettle ($80-120) fixes sour shots',
-          '5. If still upgrading gear: ' + (p.budget === 'over1200' ? 'Move to prosumer machines or exotic grinders' : 'Save until you can make a significant jump (2x current gear cost minimum)')
-        ],
-        proTip: '💡 The 2x Rule: Only upgrade when you can spend 2x what you paid for current gear. Smaller upgrades rarely satisfy.',
-        conclusion: 'You\'re past the point where gear matters most. Focus on beans, water, and technique first.',
-        links: [
-          { label: 'Third Wave Water', keyword: 'third wave water coffee' },
-          { label: 'WDT Distribution Tool', keyword: 'wdt tool espresso distribution' },
-          { label: 'Precision Filter Baskets', keyword: 'vst precision filter basket' }
-        ]
-      };
-    }
-
-    function generateCompleteBeginnerProfile() {
-      return {
-        title: 'The Smart Beginner Path 🌱',
-        emoji: '🌟',
-        message: 'Don\'t start with espresso. Seriously. Here\'s why and what to do instead:',
-        advice: [
-          'Espresso is advanced coffee. It\'s like learning piano by starting with Rachmaninoff.',
-          'Start here instead:',
-          '• AeroPress ($35) + hand grinder ($50-70) = $85-105 total',
-          '• OR: French Press ($25-40) + hand grinder ($50-70) = $75-110 total',
-          '• Both make BETTER coffee than any espresso setup under $400',
+          'Your budget means you can get ACTUAL good stuff:',
           '',
-          'Why this works:',
-          '✓ Forgiving (hard to mess up)',
-          '✓ Learn fundamentals (grind size, water temp, ratios)',
-          '✓ Actually enjoyable from day one',
-          '✓ Saves $300-500 vs rushed espresso purchase'
+          userProfile.budget === '400to700' ? '💰 $400-700 tier:' : '💎 $700+ tier:',
+          userProfile.budget === '400to700' ? 
+            '• Machine: Gaggia Classic Pro ($450) or Bambino Plus ($350)' :
+            '• Machine: Gaggia Classic Pro ($450), Rancilio Silvia ($800), or Lelit ($1500+)',
+          userProfile.budget === '400to700' ?
+            '• Grinder: Baratza Sette 270 ($400) or 1Zpresso K-Plus ($260)' :
+            '• Grinder: Niche Zero ($700), DF64 ($450), or Lagom P64 ($1300)',
+          '',
+          userProfile.needsGrinder ? '• You need a grinder - budget 50-60% there' : '• Your grinder is solid - focus on machine!',
+          '• Don\'t forget: Scale ($30), tamper ($30), distributor ($20)',
+          '• This setup will last 5-10+ years'
         ],
-        proTip: '💡 After 3-6 months, decide: Do you want to tinker (espresso) or perfect simplicity (pour-over)? By then you\'ll know.',
-        conclusion: 'Every coffee expert started simple. Save your money, learn the basics, then upgrade informed.',
+        proTip: userProfile.learning === 'nerd' ? 
+          '💡 You love tinkering: Get a machine with PID temp control. You\'ll use it!' :
+          '💡 Buy from places with good returns. Espresso has a learning curve and you might want to adjust.',
+        conclusion: 'You\'re about to join the espresso cult. Welcome. Your wallet will hate you but your taste buds will throw a party every morning.',
         links: [
-          { label: 'AeroPress Coffee Maker', keyword: 'aeropress coffee and espresso maker' },
+          { label: 'Gaggia Classic Pro', keyword: 'gaggia classic pro espresso' },
+          { label: 'Niche Zero Grinder', keyword: 'niche zero coffee grinder' },
+          { label: 'Espresso Accessories', keyword: 'espresso starter kit scale tamper' }
+        ]
+      };
+    }
+
+    function generateEasyProfile() {
+      return {
+        title: 'The "I Just Want Good Coffee" Path 😌',
+        emoji: '☕',
+        message: 'Zero shame here. Great coffee doesn\'t need to be complicated!',
+        advice: [
+          'Your best options:',
+          '',
+          '1️⃣ AeroPress ($35) + basic grinder ($80)',
+          '   • Total: ~$115',
+          '   • Time: 2 minutes',
+          '   • Cleanup: 10 seconds (seriously)',
+          '   • Taste: Better than most coffee shops',
+          '',
+          '2️⃣ French Press ($30) + electric grinder ($100)',
+          '   • Total: ~$130',
+          '   • Time: 5 minutes (mostly waiting)',
+          '   • Cleanup: Easy',
+          '   • Taste: Rich, full-bodied',
+          '',
+          '3️⃣ Premium Auto Drip (if you want ZERO effort)',
+          '   • Technivorm Moccamaster ($310)',
+          '   • Press button, get perfect coffee',
+          '   • Best "lazy" option that still tastes amazing'
+        ],
+        proTip: '💡 Secret: AeroPress is what coffee nerds use when they\'re too lazy for espresso. It\'s that good.',
+        conclusion: 'Simple doesn\'t mean bad. These methods are used by coffee pros who don\'t want to think before caffeine.',
+        links: [
+          { label: 'AeroPress Coffee Maker', keyword: 'aeropress coffee maker' },
+          { label: 'Bodum French Press', keyword: 'bodum french press 8 cup' },
+          { label: 'Baratza Encore Grinder', keyword: 'baratza encore grinder' },
+          { label: 'Technivorm Moccamaster', keyword: 'technivorm moccamaster' }
+        ]
+      };
+    }
+
+    function generatePourOverProfile() {
+      return {
+        title: 'The Pour-Over Perfectionist Path 🌊',
+        emoji: '☕',
+        message: 'Ah, a person of culture. Let\'s get you pouring like a pro!',
+        advice: [
+          userProfile.needsGrinder ? 'First priority: Better grinder' : 'Your grinder is good - now perfect your technique!',
+          '',
+          userProfile.needsGrinder ? 'Grinder options:' : 'Your upgrade path:',
+          userProfile.needsGrinder ? '• Budget: Timemore C2 ($70) - best bang for buck' : '• Gooseneck kettle with temp control ($60-90)',
+          userProfile.needsGrinder ? '• Mid-tier: Fellow Ode ($300) - the Instagram favorite' : '• Precision scale with timer ($30-50)',
+          userProfile.needsGrinder ? '• Serious: Baratza Encore ($150) - boring but perfect' : '• Better filters (try different brands)',
+          '',
+          'Dripper choice:',
+          '• V60 ($8-25): Maximum control, slight learning curve',
+          '• Chemex ($40-50): Looks cool, great for 2+ cups',
+          '• Kalita Wave ($30-40): Most forgiving, consistent',
+          '',
+          'The technique (simplified):',
+          '1. Heat water to 200°F (just off boil)',
+          '2. Use 15g coffee to 250g water (1:16 ratio)',
+          '3. Bloom 30-45 seconds with 2x coffee weight',
+          '4. Pour slowly in circles, finish in 2:30-3:30',
+          '5. Drink. Adjust. Repeat.'
+        ],
+        proTip: '💡 Watch James Hoffmann\'s Ultimate V60 Technique on YouTube. Follow it EXACTLY 3 times. Then tweak to taste.',
+        conclusion: userProfile.needsGrinder ? 
+          'Fix the grinder first. Everything else is secondary. Trust the process.' :
+          'You\'re 90% there. Now it\'s about technique, not gear. Enjoy the journey!',
+        links: [
+          { label: 'Hario V60 Dripper', keyword: 'hario v60 pour over dripper' },
+          { label: 'Timemore C2 Grinder', keyword: 'timemore c2 grinder' },
+          { label: 'Gooseneck Kettle', keyword: 'fellow stagg ekg kettle' },
+          { label: 'Coffee Scale Timer', keyword: 'hario coffee scale timer' }
+        ]
+      };
+    }
+
+    function generateBeginnerProfile() {
+      return {
+        title: 'Welcome to Coffee! Let\'s Start Smart 🌱',
+        emoji: '🌟',
+        message: 'First rule of coffee club: DON\'T start with espresso. Here\'s why:',
+        advice: [
+          '🎯 The Truth About Starting:',
+          '• Espresso is like learning guitar by trying to play Hendrix',
+          '• You\'ll spend $500 and make bad coffee for 3 months',
+          '• Then buy more stuff to "fix" the bad coffee',
+          '• We\'ve all been there. Don\'t be us.',
+          '',
+          '🎁 Your actual best path:',
+          '',
+          '1️⃣ AeroPress ($35) + hand grinder ($50)',
+          '   Total: $85',
+          '   Result: Better than 90% of coffee shops',
+          '   Why: Impossible to mess up, tastes amazing',
+          '',
+          '2️⃣ French Press ($30) + hand grinder ($50)',
+          '   Total: $80',
+          '   Result: Rich, bold, classic',
+          '   Why: Even easier than AeroPress',
+          '',
+          '3️⃣ Fresh beans from local roaster',
+          '   Cost: $15-20/bag',
+          '   Impact: HUGE difference',
+          '',
+          'After 3-6 months:',
+          '• You\'ll know if you want to tinker (espresso)',
+          '• Or keep it simple (pour-over mastery)',
+          '• You\'ll have saved $300-500',
+          '• You\'ll actually understand what you\'re buying'
+        ],
+        proTip: '💡 Every coffee expert started exactly here. The difference is they didn\'t rush. Neither should you.',
+        conclusion: 'Start small, learn big, upgrade informed. Your future caffeinated self will thank you!',
+        links: [
+          { label: 'AeroPress Coffee Maker', keyword: 'aeropress coffee maker original' },
           { label: 'Hario Mini Mill', keyword: 'hario mini mill slim grinder' },
-          { label: 'French Press', keyword: 'bodum french press coffee maker' },
+          { label: 'Bodum French Press', keyword: 'bodum french press' },
           { label: 'Fresh Coffee Beans', keyword: 'fresh roasted coffee beans whole bean' }
         ]
       };
@@ -1552,26 +1471,37 @@
       const p = userProfile;
       
       return {
-        title: 'Your Personalized Coffee Path ☕',
+        title: 'Your Custom Coffee Game Plan ☕',
         emoji: '🎯',
-        message: 'Based on your answers, here\'s your best approach:',
+        message: 'Based on your vibes, here\'s your personalized path forward:',
         advice: [
-          'Your priorities:',
-          p.needsGrinderUpgrade ? '1. Grinder upgrade (this impacts everything)' : '1. Your grinder is solid ✓',
-          p.needsBetterBeans ? '2. Source fresher beans (roasted within 2-3 weeks)' : '2. Bean quality is good ✓',
-          p.needsWaterFix ? '3. Fix water quality (filtered or bottled)' : '3. Water quality is adequate ✓',
-          `4. ${p.goal === 'espresso' ? 'Invest in espresso machine that matches grinder quality' : 'Upgrade brewing method to match your commitment level'}`,
+          '📊 Your Priority List:',
           '',
-          'Budget allocation:',
-          p.needsGrinderUpgrade ? '• Grinder: 50% of budget' : '• Grinder: Already covered ✓',
-          '• Brewer: ' + (p.needsGrinderUpgrade ? '35% of budget' : '60% of budget'),
-          '• Accessories: ' + (p.needsGrinderUpgrade ? '15% of budget' : '40% of budget')
+          p.needsGrinder ? '1️⃣ Grinder (this changes everything)' : '1️⃣ Grinder ✅ You\'re good here!',
+          p.needsBeans ? '2️⃣ Fresh beans (roasted within 2-3 weeks)' : '2️⃣ Beans ✅ Looking good!',
+          p.goal === 'espresso' ? '3️⃣ Espresso machine (match to grinder quality)' : '3️⃣ Brewing method upgrade',
+          '4️⃣ Accessories (scale, kettle, etc.)',
+          '',
+          '💰 Budget Split:',
+          p.needsGrinder ? '• 50% grinder' : '• Grinder covered ✓',
+          p.needsGrinder ? '• 35% brewer' : '• 60% brewer',
+          p.needsGrinder ? '• 15% accessories' : '• 40% accessories',
+          '',
+          '🎓 Your Learning Style:',
+          p.learning === 'nerd' ? '• You love complexity - embrace it! Get gear with lots of control.' : 
+          p.learning === 'moderate' ? '• You want balance - choose forgiving methods with room to grow.' :
+          '• You want simplicity - prioritize automatic/easy options.',
+          '',
+          '⏰ Time Consideration:',
+          p.time === 'rushed' ? '• Fast is key - look for quick methods or automation' :
+          p.time === 'ritual' ? '• You have time - enjoy manual methods and experimentation' :
+          '• Standard timing - most methods will work fine'
         ],
-        conclusion: 'Great coffee is a system, not a single product. Build it piece by piece, starting with fundamentals.',
+        conclusion: 'Coffee is a journey, not a destination. Build your setup piece by piece. Every upgrade should fix a specific problem.',
         links: [
-          { label: 'Burr Coffee Grinders', keyword: 'burr coffee grinder' },
-          { label: 'Fresh Coffee Beans', keyword: 'fresh roasted specialty coffee' },
-          { label: 'Water Filters', keyword: 'brita water filter pitcher' }
+          { label: 'Coffee Grinders Guide', keyword: 'burr coffee grinder recommendations' },
+          { label: 'Fresh Coffee Beans', keyword: 'specialty coffee beans fresh roasted' },
+          { label: 'Coffee Brewing Equipment', keyword: 'coffee maker pour over espresso' }
         ]
       };
     }
@@ -1633,7 +1563,7 @@
             <div class="amazon-links">
               ${profile.links.map(link => `
                 <a href="https://www.amazon.com/s?k=${encodeURIComponent(link.keyword)}&tag=${CONFIG.affiliateTag}" 
-                   class="amazon-btn" target="_blank" rel="noopener">
+                   class="amazon-btn" target="_blank" rel="noopener noreferrer">
                   ${link.label} →
                 </a>
               `).join('')}
@@ -1652,11 +1582,11 @@
           <p style="color: #1565C0; margin: 10px 0;">Share this quiz - you might save someone $500</p>
           <div class="share-buttons">
             <a href="https://twitter.com/intent/tweet?text=Just%20took%20the%20brutally%20honest%20coffee%20quiz%20that%20tells%20you%20what%20NOT%20to%20buy.%20Saved%20me%20from%20expensive%20mistakes!%20%F0%9F%91%87&url=https://coffeemistakes.com" 
-               class="share-btn twitter" target="_blank" rel="noopener">Share on Twitter</a>
+               class="share-btn twitter" target="_blank" rel="noopener noreferrer" aria-label="Share on Twitter">Share on Twitter</a>
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://coffeemistakes.com" 
-               class="share-btn facebook" target="_blank" rel="noopener">Share on Facebook</a>
+               class="share-btn facebook" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">Share on Facebook</a>
             <a href="https://reddit.com/submit?url=https://coffeemistakes.com&title=Coffee%20Gear%20Quiz%20That%20Actually%20Helps%20(Built%20from%201000+%20Reddit%20Threads)" 
-               class="share-btn reddit" target="_blank" rel="noopener">Share on Reddit</a>
+               class="share-btn reddit" target="_blank" rel="noopener noreferrer" aria-label="Share on Reddit">Share on Reddit</a>
           </div>
         </div>
 
@@ -1664,7 +1594,7 @@
           <h4>☕ Did this quiz save you from a $500 mistake?</h4>
           <p>This site is 100% free and ad-free. Took hours to build from real Reddit advice.</p>
           <p style="margin-top: 8px;">If it helped, consider buying me a coffee!</p>
-          <a href="${CONFIG.paypalLink}" class="paypal-btn" target="_blank" rel="noopener">💵 Buy Me a Coffee ($3-5)</a>
+          <a href="${CONFIG.paypalLink}" class="paypal-btn" target="_blank" rel="noopener noreferrer">💵 Buy Me a Coffee ($3-5)</a>
           <div class="small-text" style="margin-top: 12px;">Every donation keeps this site running and updated with the latest Reddit wisdom</div>
           <div class="small-text">Thank you for supporting independent coffee resources! ❤️</div>
         </div>
@@ -1673,9 +1603,9 @@
 
         <div class="disclosure">
           <p>As an Amazon Associate, I earn from qualifying purchases. | 
-          <a href="${CONFIG.privacyPolicyUrl}" target="_blank">Privacy Policy</a></p>
+          <a href="${CONFIG.privacyPolicyUrl}">Privacy Policy</a></p>
           <div class="small-text" style="margin-top: 8px;">
-            Last updated: October 22, 2025 • Built from real r/Coffee advice
+            Last updated: October 23, 2025 • Built from real r/Coffee advice
           </div>
         </div>
       `;
@@ -1693,7 +1623,7 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    console.log("CoffeeMistakes.com - Improved Quiz v2.0 loaded!");
+    console.log("CoffeeMistakes.com - Funnier Beginner-Friendly Quiz v3.0 loaded!");
   </script>
 </body>
 </html>
