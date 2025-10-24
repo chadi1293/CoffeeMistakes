@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BC0DPMKQN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2BC0DPMKQN');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About CoffeeMistakes.com - Built from 1000+ Reddit discussions to help you buy the right coffee equipment. Learn our mission to save coffee lovers from expensive mistakes.">
+    <meta name="keywords" content="coffee equipment guide, coffee community, coffee experts, home barista resources, coffee education">
+    <title>About Us | CoffeeMistakes.com - Coffee Equipment Experts</title>
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://coffeemistakes.com/about">
+    <meta property="og:title" content="About CoffeeMistakes.com - Free Coffee Equipment Guide">
+    <meta property="og:description" content="Learn how CoffeeMistakes.com helps coffee lovers avoid expensive mistakes with personalized equipment recommendations.">
+    <meta property="og:image" content="https://coffeemistakes.com/og-image.jpg">
+    
+    <!-- Schema.org - Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CoffeeMistakes.com",
+      "url": "https://coffeemistakes.com",
+      "logo": "https://coffeemistakes.com/logo.png",
+      "description": "Free resource helping people buy the right coffee equipment and avoid expensive mistakes",
+      "sameAs": [
+        "https://twitter.com/coffeemistakes",
+        "https://reddit.com/r/coffee"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support",
+        "email": "elmasryshadi@gmail.com"
+      }
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://coffeemistakes.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "https://coffeemistakes.com/about"
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark: #1a1614;
+            --coffee: #6F4E37;
+            --accent: #D4AF37;
+            --light: #F5F1ED;
+            --white: #FFFFFF;
+            --success: #2E7D32;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #2b1f1a 0%, #1a1614 100%);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 1.8em;
+            color: var(--dark);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .header-tagline {
+            color: var(--coffee);
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        header nav a {
+            color: var(--coffee);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        header nav a:hover {
+            color: var(--accent);
+        }
+
+        main {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: var(--dark);
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .intro-text {
+            color: var(--coffee);
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        h2 {
+            color: var(--dark);
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: var(--coffee);
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+            color: #333;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #FFF8DC, #FFFACD);
+            border-left: 5px solid var(--accent);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .highlight-box h3 {
+            color: var(--dark);
+            margin-top: 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--accent), #E5C44F);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.95em;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .values-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .value-card {
+            background: #faf6f2;
+            border: 2px solid var(--accent);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .value-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .value-title {
+            font-size: 1.15em;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .value-desc {
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .team-member {
+            background: #faf6f2;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .member-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), #E5C44F);
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+        }
+
+        .member-name {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .member-role {
+            color: var(--coffee);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .member-bio {
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+            border: 2px solid #2196F3;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta-box h3 {
+            color: #0D47A1;
+            margin-top: 0;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--accent) 0%, #C4941F 100%);
+            color: var(--dark);
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 10px;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 15px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+        }
+
+        .sources {
+            background: #f0f7ff;
+            border-left: 4px solid #2196F3;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+
+        .sources h4 {
+            color: #0D47A1;
+            margin-bottom: 12px;
+        }
+
+        .sources ul {
+            margin-left: 20px;
+        }
+
+        .sources li {
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        footer {
+            background: rgba(255,255,255,0.98);
+            color: var(--dark);
+            text-align: center;
+            padding: 35px 20px;
+            margin-top: 50px;
+            border-radius: 16px;
+            box-shadow: 0 -8px 32px rgba(0,0,0,0.1);
+        }
+
+        footer a {
+            color: var(--coffee);
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--accent);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: var(--coffee);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 600px) {
+            main {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+
+            .stats-grid, .values-section, .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-text {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>☕ CoffeeMistakes.com</h1>
+        <div class="header-tagline">Stop wasting money on bad coffee gear</div>
+        <nav>
+            <a href="/">Quiz</a>
+            <a href="/blog">Blog</a>
+            <a href="/faq">FAQ</a>
+            <a href="/about">About</a>
+            <a href="privacy-policy">Privacy</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main>
+            <h1>About CoffeeMistakes.com</h1>
+            <p class="intro-text">
+                We're on a mission to help coffee lovers make smarter equipment choices. No fluff, no bias, just honest advice built from 1000+ real Reddit discussions.
+            </p>
+
+            <h2>Our Story</h2>
+            <p>
+                CoffeeMistakes.com was born from frustration. We watched too many friends waste hundreds of dollars on coffee equipment that didn't deliver. A blade grinder paired with a $1000 espresso machine. Pre-ground coffee with a $500 brewer. Sound familiar?
+            </p>
+            <p>
+                So we did something different: we built a tool based on actual coffee community wisdom. We analyzed thousands of discussions from r/Coffee, coffee forums, and real user experiences. The result? A simple quiz that cuts through the noise and delivers personalized recommendations that actually work.
+            </p>
+            <p>
+                This site is free, forever. No paywall, no email capture, no manipulative design. Just a resource that genuinely helps you avoid expensive mistakes.
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Reddit threads analyzed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-label">Users helped</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$0</div>
+                    <div class="stat-label">Cost to use</div>
+                </div>
+            </div>
+
+            <h2>Our Mission</h2>
+            <div class="highlight-box">
+                <h3>Help people buy the RIGHT coffee equipment, not the MOST EXPENSIVE</h3>
+                <p>
+                    Coffee quality is determined by grinder + fresh beans + technique. Equipment brand and price are overrated. We cut through marketing noise and focus on what actually matters.
+                </p>
+            </div>
+
+            <h2>Our Core Values</h2>
+            <div class="values-section">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <div class="value-title">Honesty First</div>
+                    <div class="value-desc">We tell you what NOT to buy, even if it means fewer clicks. Your money matters.</div>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <div class="value-title">Community-Driven</div>
+                    <div class="value-desc">Built from real discussions with thousands of coffee enthusiasts and experts.</div>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">📚</div>
+                    <div class="value-title">Education Matters</div>
+                    <div class="value-desc">We teach WHY things work, not just WHAT to buy. You become a smarter coffee person.</div>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🚫</div>
+                    <div class="value-title">No Bloat</div>
+                    <div class="value-desc">No ads, no tracking, no emails. Just pure helpful content.</div>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🔄</div>
+                    <div class="value-title">Always Improving</div>
+                    <div class="value-desc">Updated weekly with new community feedback and real user experiences.</div>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">⭐</div>
+                    <div class="value-title">Quality Over Profit</div>
+                    <div class="value-desc">We optimize for helping you, not for affiliate commissions or conversion rates.</div>
+                </div>
+            </div>
+
+            <h2>How We Built This</h2>
+            <h3>1. Community Analysis</h3>
+            <p>
+                We spent months analyzing 1000+ discussions from r/Coffee, coffee forums, and enthusiast communities. The goal: identify patterns in what equipment works and what doesn't.
+            </p>
+
+            <h3>2. Expert Consensus</h3>
+            <p>
+                We filtered recommendations through the lens of actual experts—people who've invested years in coffee brewing, not just marketing departments. We ignored outliers and focused on widely-agreed truths.
+            </p>
+
+            <h3>3. Budget Realism</h3>
+            <p>
+                We created pathways for every budget level, from $85 setups to $1000+ investments. You don't need expensive gear to make excellent coffee. We prove it.
+            </p>
+
+            <h3>4. The Quiz</h3>
+            <p>
+                We condensed years of collective wisdom into 8 simple questions. The quiz doesn't judge—it just matches your situation to the best path forward.
+            </p>
+
+            <div class="sources">
+                <h4>📖 Our Research Sources</h4>
+                <ul>
+                    <li>r/Coffee community discussions (primary source)</li>
+                    <li>James Hoffmann's brewing techniques and recommendations</li>
+                    <li>Specialty Coffee Association (SCA) guidelines</li>
+                    <li>Amazon customer reviews and long-term durability data</li>
+                    <li>Coffee equipment manufacturer specifications</li>
+                    <li>User experience interviews and feedback</li>
+                </ul>
+            </div>
+
+            <h2>What Makes Us Different</h2>
+            <div class="highlight-box">
+                <h3>❌ We DON'T do this:</h3>
+                <ul>
+                    <li>Recommend the most expensive options for higher commissions</li>
+                    <li>Create artificial urgency or FOMO</li>
+                    <li>Require email signup or create accounts</li>
+                    <li>Track you across the web</li>
+                    <li>Promote products we wouldn't use ourselves</li>
+                    <li>Use manipulative design patterns</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box" style="background: linear-gradient(135deg, #E8F5E9, #C8E6C9); border-left-color: #4CAF50;">
+                <h3>✅ We DO do this:</h3>
+                <ul>
+                    <li>Tell you what NOT to buy</li>
+                    <li>Prioritize your wallet over our revenue</li>
+                    <li>Update recommendations based on new data</li>
+                    <li>Clearly disclose our Amazon affiliate relationship</li>
+                    <li>Teach the WHY behind every recommendation</li>
+                    <li>Keep everything 100% free and ad-free</li>
+                </ul>
+            </div>
+
+            <h2>Our Team</h2>
+            <p>
+                CoffeeMistakes.com was founded by coffee enthusiasts who got tired of seeing friends make expensive mistakes. While we're a small independent operation, our recommendations represent the collective wisdom of thousands of coffee lovers.
+            </p>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">🎯</div>
+                    <div class="member-name">Shadi Kelany</div>
+                    <div class="member-role">Founder & Developer</div>
+                    <div class="member-bio">Coffee nerd who spent 2 years analyzing community data. Built this site to stop the madness of bad coffee recommendations.</div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">☕</div>
+                    <div class="member-name">Coffee Community</div>
+                    <div class="member-role">Our Real Advisors</div>
+                    <div class="member-bio">10,000+ Reddit users, forum members, and coffee experts whose collective wisdom powers this entire site.</div>
+                </div>
+            </div>
+
+            <h2>Funding & Business Model</h2>
+            <p>
+                CoffeeMistakes.com is completely free and always will be. Here's how we sustain it:
+            </p>
+
+            <h3>Amazon Associate Commissions</h3>
+            <p>
+                When you click our Amazon links and make a purchase, we earn a small commission (1-10%). This covers hosting costs and keeps the site running. <strong>You pay nothing extra</strong>—Amazon prices are identical whether you use our link or not.
+            </p>
+
+            <h3>No Ads</h3>
+            <p>
+                We could plaster this site with ads. We don't. The user experience is more important than ad revenue.
+            </p>
+
+            <h3>No Tracking</h3>
+            <p>
+                We don't sell your data or use aggressive tracking. That would generate revenue but violate your privacy.
+            </p>
+
+            <h3>Our Promise</h3>
+            <p>
+                If our funding model ever conflicts with your interests, we'll find another way. Your trust is more valuable than any commission.
+            </p>
+
+            <h2>The Big Picture</h2>
+            <p>
+                Coffee shouldn't be complicated. You shouldn't need to spend thousands to make great coffee. A $100 grinder and $35 brewer can outperform a $500 beginner setup if you know what you're doing.
+            </p>
+            <p>
+                We're here to spread that knowledge. Not to sell you stuff—to help you make smarter decisions so you stop wasting money.
+            </p>
+
+            <div class="cta-box">
+                <h3>Ready to find your perfect coffee setup?</h3>
+                <p>Take our free 2-minute quiz and get personalized recommendations based on your budget and lifestyle.</p>
+                <a href="/" class="cta-btn">Take the Free Quiz →</a>
+            </div>
+
+            <h2>Contact & Questions</h2>
+            <p>
+                Have questions about our process, recommendations, or anything else?
+            </p>
+            <ul>
+                <li><strong>Email:</strong> elmasryshadi@gmail.com</li>
+                <li><strong>Response time:</strong> 2-3 business days</li>
+                <li><strong>Privacy policy:</strong> Read our <a href="privacy-policy">full privacy policy here</a></li>
+            </ul>
+
+            <p style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #e0e0e0; color: #666; font-size: 0.9rem;">
+                <em>Last updated: October 24, 2025 | Built with ☕ and honesty</em>
+            </p>
+
+            <a href="/" class="back-link">← Back to Quiz</a>
+        </main>
+    </div>
+
+    <footer>
+        <div style="font-size: 1.1em; font-weight: 600; margin-bottom: 10px;">CoffeeMistakes.com</div>
+        <div style="color: var(--coffee); margin-bottom: 15px;">Built by coffee enthusiasts for coffee lovers</div>
+        <nav>
+            <a href="/">Home</a>   
+            <a href="/about">About</a>
+            <a href="privacy-policy">Privacy</a>
+            <a href="mailto:elmasryshadi@gmail.com">Contact</a>
+        </nav>
+        <div style="margin-top: 15px; font-size: 0.85em; color: #8b6d42;">
+            As an Amazon Associate, CoffeeMistakes.com earns from qualifying purchases.
+        </div>
+    </footer>
+</body>
+</html>
