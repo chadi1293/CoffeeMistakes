@@ -34,41 +34,35 @@
 
 <!-- Schema.org - Main Quiz Schema (fixed) -->
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "Coffee Equipment Recommendation Quiz",
-  "headline": "Free Coffee Gear Quiz | Find Your Perfect Setup",
-  "description": "Take this free interactive quiz to discover the best coffee equipment based on your needs, budget, and brewing preferences.",
-  "url": "https://coffeemistakes.com",
-  "author": {
-    "@type": "Organization",
-    "name": "CoffeeMistakes.com",
-    "logo": "https://coffeemistakes.com/logo.png"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "CoffeeMistakes.com",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://coffeemistakes.com/logo.png"
-    }
-  },
-  "aggregateRating": {
+  {
+    "@context": "https://schema.org/",
     "@type": "AggregateRating",
+    "itemReviewed": {
+      "@type": "CreativeWork",
+      "name": "Coffee Equipment Recommendation Quiz",
+      "description": "Interactive quiz to find personalized coffee equipment recommendations based on your needs, budget, and brewing preferences.",
+      "url": "https://coffeemistakes.com",
+      "image": "https://coffeemistakes.com/logo.png",
+      "author": {
+        "@type": "Organization",
+        "name": "CoffeeMistakes.com",
+        "logo": "https://coffeemistakes.com/logo.png"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "CoffeeMistakes.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://coffeemistakes.com/logo.png"
+        }
+      }
+    },
     "ratingValue": 4.9,
     "bestRating": 5,
     "worstRating": 1,
     "reviewCount": 1247
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "0.00",
-    "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock"
   }
-}
-</script>
+  </script>
 
 
 
